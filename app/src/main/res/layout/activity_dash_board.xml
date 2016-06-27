@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.vmoksha.schoolbusdriver.activity.DashBoardActivity">
+        <!-- xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:tools="http://schemas.android.com/tools"-->
+        <LinearLayout
+            android:id="@+id/container_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <include
+                android:id="@+id/tool_bar"
+                layout="@layout/tool_bar" />
+        </LinearLayout>
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layout_button"
+            android:layout_below="@+id/container_toolbar" />
+
+        <FrameLayout
+            android:id="@+id/fram_map"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:id="@+id/btn_draw_State"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|top"
+                android:layout_marginRight="11dp"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/current_location_big" />
+        </FrameLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/detailsRelative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/layout_button"
+            android:background="@color/white_color"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/layout_bus_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!-- android:padding="10dp"
+     -->
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bus" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/busnametext"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:drawablePadding="10dp"
+                        android:text="@string/busnumbertext"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/busname"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="13dp"
+                        android:drawablePadding="10dp"
+                        android:text="@string/busnumber"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!--android:drawableLeft="@drawable/radio_unselected"-->
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewlayout"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/layout_bus_no"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/light_gray" />
+
+            <LinearLayout
+                android:id="@+id/children_details_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewlayout"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:gravity="center">
+                    <!--android:padding="10dp"-->
+
+                    <ImageView
+                        android:id="@+id/children_board_image"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/childrenc_board_icon" />
+
+                    <TextView
+                        android:id="@+id/total_childern_boarding_number"
+                        style="@style/TextBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="30dp"
+                        android:layout_toRightOf="@+id/children_board_image"
+                        android:padding="5dp"
+                        android:text="45"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <!--android:padding="10dp"
+    -->
+                    <ImageView
+                        android:id="@+id/total_pickup_point_image"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:src="@drawable/total_pickup_points_icon" />
+                    <!-- android:layout_alignParentRight="true"-->
+
+                    <TextView
+                        android:id="@+id/total_pickup_point_numbers"
+                        style="@style/TextBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/total_pickup_point_image"
+                        android:padding="7dp"
+                        android:text="30"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/details_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/children_details_layout"
+                android:orientation="horizontal"
+
+                android:weightSum="2">
+                <!-- android:padding="10dp"-->
+                <!--android:layout_marginBottom="60dp"-->
+
+                <TextView
+                    android:id="@+id/child_board_text"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Childrens to Board"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/total_pickup_text"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Total Pickup Points"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <!--<Button
+                android:id="@+id/startbutton"
+
+                style="@style/TextNormalStyle"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@+id/details_layout"
+
+
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/login_buton"
+                android:text="Start"
+                android:textColor="#fff"/>-->
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/pickup_crownImage"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_above="@+id/layout_button"
+            android:background="@drawable/pickup_point_button_crown_resize"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
+
+        <!-- <RelativeLayout
+             android:id="@+id/relative_layout"
+             android:layout_width="match_parent"
+             android:layout_height="250dp"
+             android:layout_alignParentBottom="true" >
+
+             <LinearLayout
+                 android:id="@+id/billDetailsLayout"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:visibility="gone" >
+
+                 &lt;!&ndash;<include layout="@layout/sliding_bill_summary" />&ndash;&gt;
+             </LinearLayout>
+         </RelativeLayout>-->
+
+        <RelativeLayout
+            android:id="@+id/layout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/startbutton"
+
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@drawable/button_bg"
+                android:text="Start"
+                android:textSize="15dp"
+                android:textAllCaps="false"
+                android:textColor="@color/button_text_color" />
+            <!-- android:background="@drawable/login_buton"-->
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:id="@+id/student_listLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/container_toolbar"
+            android:background="@color/white_color"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/pickup_point_relativemapbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/pickup_point_linearmapbutton"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/back_down_arrow" />
+
+                <LinearLayout
+                    android:id="@+id/pickup_point_linearmapbutton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_bg">
+
+                    <ImageView
+                        android:id="@+id/pickup_point_backtomap_icon"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/back_to_map_icon" />
+
+                    <TextView
+                        android:id="@+id/pickup_point_backtomap"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/back_to_map"
+                        android:textColor="@color/menu_button"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/pickup_point_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/pickup_point_linearbutton"
+                android:layout_below="@+id/pickup_point_relativemapbutton"
+                android:visibility="visible">
+
+            </ListView>
+
+            <ListView
+                android:id="@+id/boarded_student_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/pickup_point_linearbutton"
+                android:layout_below="@+id/pickup_point_relativemapbutton"
+                android:visibility="gone">
+
+            </ListView>
+
+            <LinearLayout
+                android:id="@+id/pickup_selectbutton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/button_bg"
+                android:gravity="center_vertical|center"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/pickup_point_selectimage"
+                    android:layout_width="30dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/select_children_icon" />
+
+                <TextView
+                    android:id="@+id/pickup_point_select_children"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_children"
+                    android:textColor="@color/menu_button"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pickup_notifynext_button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/button_bg"
+                android:gravity="center_vertical|center"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+                <!-- android:background="@color/green_button"-->
+                <TextView
+                    android:id="@+id/pickup_point_notifynext"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notify_next"
+                    android:textColor="@color/menu_button"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fragement"
+        android:name="com.vmoksha.schoolbusdriver.fragment.DrawerFragment"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout><!-- From: file:/D:/SchoolBus_Workspace/SchoolBus_SVN/SchoolBusDriver/app/src/main/res/layout/activity_dash_board.xml -->

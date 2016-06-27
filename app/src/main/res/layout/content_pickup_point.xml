@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context="com.vmoksha.schoolbusdriver.activity.PickupPoint"
+        tools:showIn="@layout/activity_pickup_point">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar" />
+
+        <RelativeLayout
+            android:id="@+id/pickup_point_relativemapbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tool_bar">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/pickup_point_linearmapbutton"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back_down_arrow" />
+
+            <LinearLayout
+                android:id="@+id/pickup_point_linearmapbutton"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@color/green_button">
+
+                <ImageView
+                    android:id="@+id/pickup_point_backtomap_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/back_to_map_icon" />
+
+                <TextView
+                    android:id="@+id/pickup_point_backtomap"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/back_to_map"
+                    android:textColor="@color/menu_button"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/pickup_point_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pickup_point_linearbutton"
+            android:layout_below="@+id/pickup_point_relativemapbutton"
+            android:visibility="visible">
+
+        </ListView>
+
+        <ListView
+            android:id="@+id/boarded_student_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pickup_point_linearbutton"
+            android:layout_below="@+id/pickup_point_relativemapbutton"
+            android:visibility="gone">
+
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/pickup_point_linearbutton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/green_button"
+            android:gravity="center_vertical|center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+
+            <ImageView
+                android:id="@+id/pickup_point_selectimage"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:src="@drawable/select_children_icon" />
+
+            <TextView
+                android:id="@+id/pickup_point_select_children"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_children"
+                android:textColor="@color/menu_button"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pickup_point_linearbutton1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/green_button"
+            android:gravity="center_vertical|center"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/pickup_point_notifynext"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notify_next"
+                android:textColor="@color/menu_button"
+                android:textSize="15sp" />
+           <!-- style="@style/TextNormalStyle"-->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fragement"
+        android:name="com.vmoksha.schoolbusdriver.fragment.DrawerFragment"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout>

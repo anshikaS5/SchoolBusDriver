@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="8dp">
+
+    <com.vmoksha.schoolbusdriver.util.CircleImageView
+        android:id="@+id/rounded_childpic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/pickup_point_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/rounded_childpic"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:id="@+id/childname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mickie Biros"
+            android:textColor="@color/darktext"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/childclass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="class 5"
+            android:textColor="@color/darktext"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/childroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roll no 15"
+            android:textColor="@color/darktext"
+            android:textSize="12sp" />
+    </LinearLayout>
+    </RelativeLayout>

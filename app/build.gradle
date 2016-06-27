@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+/*apply ANDROID_DAILY_OVERRIDE: '4b8c9154d4443ee9cf42eb609e926d3721ea0eab'*/
+
+
+repositories {
+    jcenter()
+   // mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.0'
+
+    signingConfigs {
+        release {
+            //storeFile file("keystores/release.keystore")
+            storeFile file("vmoksha.keystore")
+            storePassword "123456"
+            keyAlias "vmoksha"
+            keyPassword "keystore"
+        }
+    }
+/*
+
+    lintOptions {
+        abortOnError false
+    }
+*/
+
+
+    defaultConfig {
+        applicationId "com.vmoksha.schoolbusdriver"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+
+
+           /* zipAlign true
+            signingConfig signingConfigs.release*/
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+           /* zipAlign true*/
+        }
+
+    }
+    productFlavors {
+        devFlavor {
+
+        }
+        mTestFlavor {
+
+        }
+        stagingFlavor {
+
+        }
+    }
+}
+
+dependencies {
+    compile project(':library')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:cardview-v7:23.0.+'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.google.android.gms:play-services-location:7.5.0'
+    compile 'com.github.castorflex.smoothprogressbar:library-circular:1.+'
+    compile 'com.google.maps.android:android-maps-utils:0.4'
+    compile 'com.android.support:support-v4:23.0'
+    //    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+

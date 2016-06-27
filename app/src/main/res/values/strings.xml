@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">SchoolBusDriver</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="forgotpass_message_text">Enter your registered Mobile Number</string>
+    <string name="forgotpass_edittext_message">Enter your 10 digit mobile no</string>
+    <string name="send_message">Send Message</string>
+    <string name="title_activity_dash_board">DashBoardActivity</string>
+    <string name="login_username_msg">Username is required</string>
+    <string name="login_passwordfield_msg">Password is required </string>
+    <string name="busnumbertext">Bus Number-</string>
+    <string name="busnumber">05,KA,02 AA 2222</string>
+    <string name="Enter_mobile_number">Enter your registered mobile number</string>
+    <string name="digit_mobilenumber">10 digit mobile number</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_transport">TransportActivity</string>
+    <string name="type_of_transport">Select Type of Transport</string>
+    <string name="pickup_text">Pickup</string>
+    <string name="drop_text">Drop</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
+    <string name="title_activity_pickup_point">PickupPoint</string>
+    <string name="select_children">Select Children</string>
+
+    <string name="back_to_map">Back to Route</string>
+
+
+    <string name="title_activity_change_password">ChangePassword</string>
+    <string name="enter_oldpassword">Enter Old Password</string>
+    <string name="enter_newpassword">Enter New Password</string>
+    <string name="notify_next">Notify &amp; Next</string>
+
+    <string name="login_server_error">Internal server error</string>
+    <string name="login_in_error_message">Authentication Failed</string>
+    <string name="no_internet">No internet connection. Please check your internet</string>
+    <string name="network_error">Some issue occur</string>
+    <string name="start_button">Start</string>
+    <string name="stop_button">Stop</string>
+    <string name="pickup_point_button">Pickup Point</string>
+    <string name="drop_point_button">Drop Point</string>
+    <string name="str_btn_draw">Draw Route</string>
+    <string name="start_alert_message">Do you really want to start pickup trip?</string>
+    <string name="drop_start_alert_message">Do you really want to start drop trip?</string>
+    <string name="drop_stop_alert_message">Do you really want to stop the drop trip?</string>
+    <string name="stop_alert_message">Do you really want to stop pickup trip?</string>
+    <string name="on_back_press_alert_msg">Transit in progress. Do you want to cancel it?</string>
+    <string name="yes_button_msg">Yes</string>
+    <string name="no_button_msg">No</string>
+    <string name="old_pass_message">Please enter the old password</string>
+    <string name="new_pass_message">Please enter the new password</string>
+    <string name="password_min_length_msg">Password should be minimum of 4 characters</string>
+
+
+</resources>

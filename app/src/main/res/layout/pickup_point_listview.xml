@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="8dp">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:indeterminate="true" />
+
+        <com.vmoksha.schoolbusdriver.util.CircleImageView
+            android:id="@+id/rounded_childpic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+    </RelativeLayout>
+    <!--<ImageView
+        android:id="@+id/rounded_childpic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/childpic" />-->
+
+    <LinearLayout
+        android:id="@+id/pickup_point_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/layout1"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:id="@+id/childname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mickie Biros"
+            android:textColor="@color/darktext"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/childclass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="class 5"
+            android:textColor="@color/darktext"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/childroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roll no 15"
+            android:textColor="@color/darktext"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/pickup_point_text">
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/childrenselect_imageView"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@+id/relativeLayout"
+        android:layout_alignRight="@+id/relativeLayout"
+        android:layout_centerVertical="true"
+        android:src="@drawable/children_icon_selected"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="Not boarding today"
+        android:textColor="@color/lighttext"
+        android:textSize="10sp" />
+
+</RelativeLayout>
